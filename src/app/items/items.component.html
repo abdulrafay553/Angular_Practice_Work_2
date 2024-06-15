@@ -1,0 +1,40 @@
+<h1 class="text-3xl font-semibold" style="font-family: Garamond, serif">
+  PRODUCTS CATALOG
+</h1>
+<hr />
+
+<div
+  class="place-items-center grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-2 xs:grid-cols-1"
+>
+  <div *ngFor="let abc of allProducts">
+    <mat-card class="example-card m-3">
+      <mat-card-header>
+        <div mat-card-avatar>
+          <img
+            src="https://lirp.cdn-website.com/eda4ad32/dms3rep/multi/opt/41717CF9-288E-4F9C-BF86-9E35DA494F87-640w.jpg"
+            style="border-radius: 50%"
+          />
+        </div>
+        <mat-card-title>{{ abc.title.substring(0, 30) }}</mat-card-title>
+        <mat-card-subtitle>Price: {{ abc.price }}</mat-card-subtitle>
+      </mat-card-header>
+      <hr />
+      <br />
+      <img
+        mat-card-image
+        src="{{ abc.image }}"
+        alt="Book"
+        style="height: 40rch"
+      />
+      <br />
+      <mat-card-content>
+        <p>
+          {{ abc.description.substring(0, 150) }}
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button>Show Details</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
